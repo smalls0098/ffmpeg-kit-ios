@@ -3,7 +3,7 @@ name: iOS build
 on: workflow_dispatch
 jobs:
   build-ios-main-on-macos-sonoma:
-    name: ios main on macos-14
+    name: ios main on sonoma
     runs-on: macos-14
     defaults:
       run:
@@ -15,7 +15,7 @@ jobs:
       - name: set up xcode
         run: echo "export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer" > ~/.xcode.for.ffmpeg.kit.sh
       - name: run the build script
-        run: PATH="/usr/local/opt/bison/bin:$PATH" XML_CATALOG_FILES="/usr/local/etc/xml/catalog" ./ios.sh -x --full --enable-gpl --disable-lib-srt --disable-lib-gnutls --no-bitcode --disable-armv7 --disable-armv7s --disable-i386 --disable-arm64e
+        run: PATH="/usr/local/opt/bison/bin:$PATH" XML_CATALOG_FILES="/usr/local/etc/xml/catalog" ./ios.sh -x --full --enable-gpl --disable-lib-srt --disable-lib-gnutls --no-bitcode
       - name: print build logs
         if: ${{ always() }}
         run: cat build.log
