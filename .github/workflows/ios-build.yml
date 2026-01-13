@@ -3,8 +3,8 @@ name: iOS build
 on: workflow_dispatch
 jobs:
   build-ios-main-on-macos-sonoma:
-    name: ios main on macos-26
-    runs-on: macos-26
+    name: ios main on macos-15
+    runs-on: macos-15
     defaults:
       run:
         shell: bash
